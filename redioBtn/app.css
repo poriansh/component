@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Vazirmatn";
+}
+
+.redio-werraper {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.redio-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.redio-box label {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid gray;
+    border-radius: 2rem;
+    color: gray;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.redio-box label::before{
+    content: '';
+    position: absolute;
+    right: 2rem;
+    box-shadow: 0 0 0 2px gray;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: 4px solid #fff;
+
+}
+.redio-box input:checked + label{
+
+    border: 2px solid blue;
+    color: blue;
+
+}
+.redio-box input:checked + label::before{
+
+    box-shadow: 0 0 0 2px blue;
+    background-color: blue;
+
+}
+@media (min-width: 500px){
+.redio-werraper{
+    flex-direction: row;
+}
+    
+}
