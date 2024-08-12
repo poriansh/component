@@ -17,6 +17,7 @@ function addNewTodo() {
     inputElem.value = "";
     todosArrey.push(newtodo);
     genarateTodo(todosArrey);
+    setLocalstorage(todosArrey)
     inputElem.focus();
   }
 }
@@ -24,7 +25,7 @@ function genarateTodo(todos) {
   let result = "";
   todos.forEach((item) => {
     result += ` <li class="todo">
-    <p class="todo__title ${item.compelet && 'completed'}">${item.title}</p>
+    <p class="todo__title ${item.compelet && "completed"}">${item.title}</p>
     <span class="todo__createdAt">${new Date(item.createdAt).toLocaleDateString("fa-IR")}</span>
     <button>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6d28d9"
@@ -64,6 +65,7 @@ function removebtn(todoId) {
     return todo.id !== todoId;
   });
   genarateTodo(todosArrey);
+  setLocalstorage(todosArrey);
 }
 function checktodo(todoId) {
   todosArrey.forEach((todo) => {
@@ -71,8 +73,9 @@ function checktodo(todoId) {
       todo.compelet = !todo.compelet;
     }
   });
-  
-  genarateTodo(todosArrey)
+
+  genarateTodo(todosArrey);
+  setLocalstorage(todosArrey);
 }
 function filtetodo(e) {
   const filterValue = e.target.value;
@@ -94,7 +97,20 @@ function filtetodo(e) {
     default:
       genarateTodo(todosArrey);
   }
+
 }
+function setLocalstorage(todos) {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+window.addEventListener("DOMContentLoaded", () => {
+  const getLocalStorage = JSON.parse(localStorage.getItem("todos"));
+  if (getLocalStorage) {
+    todosArrey = getLocalStorage;
+  } else {
+    todosArrey = [];
+  }
+  genarateTodo(todosArrey);
+});
 addTodo.addEventListener("click", (e) => {
   e.preventDefault();
   addNewTodo();
