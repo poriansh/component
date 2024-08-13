@@ -3,11 +3,16 @@ const addTodo = $.querySelector(".add-todo");
 const inputElem = $.querySelector(".todo-input");
 const todoList = $.querySelector(".todolist");
 const selectTodo = $.querySelector(".filter-todos");
-
+const todoeditbox = $.querySelector(".todo-edit");
+const overlay = $.querySelector(".overlay");
+const canselbtn = $.querySelector(".todo-edit-btn__cancel");
+const changeEditbtn = $.querySelector(".todo-edit-btn__change");
+const inputEdit = $.querySelector(".todo-edit__input");
 let todosArrey = [];
-let filterValue = 'all'
-function addNewTodo() {
-  let inputValue = inputElem.value;
+let filterValue = "all";
+let selectTodoId = null;
+function addNewTodo(valueTodo) {
+  let inputValue = valueTodo;
   if (inputValue) {
     let newtodo = {
       id: Date.now(),
@@ -18,7 +23,7 @@ function addNewTodo() {
     inputElem.value = "";
     todosArrey.push(newtodo);
     filtetodo();
-    setLocalstorage(todosArrey)
+    setLocalstorage(todosArrey);
     inputElem.focus();
   }
 }
@@ -28,6 +33,13 @@ function genarateTodo(todos) {
     result += ` <li class="todo">
     <p class="todo__title ${item.compelet && "completed"}">${item.title}</p>
     <span class="todo__createdAt">${new Date(item.createdAt).toLocaleDateString("fa-IR")}</span>
+     <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#03346E"
+              class="todo__edit">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+            </svg>
+          </button>
     <button>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6d28d9"
     class="todo__check">
@@ -56,8 +68,13 @@ function genarateTodo(todos) {
   const checkBtnTodo = $.querySelectorAll(".todo__check");
   checkBtnTodo.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      console.log("click");
       checktodo(todos[index].id);
+    });
+  });
+  const editBtnTodo = $.querySelectorAll(".todo__edit");
+  editBtnTodo.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      editTodo(todos[index].title, todos[index].id);
     });
   });
 }
@@ -78,6 +95,28 @@ function checktodo(todoId) {
   filtetodo();
   setLocalstorage(todosArrey);
 }
+function editTodo(todoTitle, todoid) {
+  selectTodoId = todoid;
+  todoeditbox.classList.add("todo-edit--active");
+  overlay.classList.add("overlay--active");
+  inputEdit.value = todoTitle;
+  inputEdit.focus();
+}
+function canseltodo() {
+  todoeditbox.classList.remove("todo-edit--active");
+  overlay.classList.remove("overlay--active");
+}
+function changetodo() {
+  const newTitleTodo = inputEdit.value;
+  todosArrey.forEach((todo) => {
+    if (todo.id === selectTodoId) {
+      todo.title = newTitleTodo;
+    }
+  });
+  filtetodo();
+  setLocalstorage(todosArrey);
+  canseltodo();
+}
 function filtetodo() {
   switch (filterValue) {
     case "all": {
@@ -97,7 +136,6 @@ function filtetodo() {
     default:
       genarateTodo(todosArrey);
   }
-
 }
 function setLocalstorage(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -113,12 +151,18 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 addTodo.addEventListener("click", (e) => {
   e.preventDefault();
-  addNewTodo();
+  addNewTodo(inputElem.value);
 });
 selectTodo.addEventListener("change", (e) => {
-  
-  filterValue = e.target.value
-  filtetodo()
-
-
+  filterValue = e.target.value;
+  filtetodo();
 });
+canselbtn.addEventListener("click", canseltodo);
+changeEditbtn.addEventListener("click", changetodo);
+ inputEdit.addEventListener("keydown", (e) => {
+   if (e.key === "Enter") {
+     e.preventDefault();
+     changetodo();
+     // جلوگیری از رفرش صفحه هنگام زدن Enter
+   }
+ });
