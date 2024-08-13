@@ -5,6 +5,7 @@ const todoList = $.querySelector(".todolist");
 const selectTodo = $.querySelector(".filter-todos");
 
 let todosArrey = [];
+let filterValue = 'all'
 function addNewTodo() {
   let inputValue = inputElem.value;
   if (inputValue) {
@@ -16,7 +17,7 @@ function addNewTodo() {
     };
     inputElem.value = "";
     todosArrey.push(newtodo);
-    genarateTodo(todosArrey);
+    filtetodo();
     setLocalstorage(todosArrey)
     inputElem.focus();
   }
@@ -64,7 +65,7 @@ function removebtn(todoId) {
   todosArrey = todosArrey.filter((todo) => {
     return todo.id !== todoId;
   });
-  genarateTodo(todosArrey);
+  filtetodo();
   setLocalstorage(todosArrey);
 }
 function checktodo(todoId) {
@@ -74,11 +75,10 @@ function checktodo(todoId) {
     }
   });
 
-  genarateTodo(todosArrey);
+  filtetodo();
   setLocalstorage(todosArrey);
 }
-function filtetodo(e) {
-  const filterValue = e.target.value;
+function filtetodo() {
   switch (filterValue) {
     case "all": {
       genarateTodo(todosArrey);
@@ -115,4 +115,10 @@ addTodo.addEventListener("click", (e) => {
   e.preventDefault();
   addNewTodo();
 });
-selectTodo.addEventListener("change", filtetodo);
+selectTodo.addEventListener("change", (e) => {
+  
+  filterValue = e.target.value
+  filtetodo()
+
+
+});
