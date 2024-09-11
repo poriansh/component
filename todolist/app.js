@@ -159,10 +159,10 @@ selectTodo.addEventListener("change", (e) => {
 });
 canselbtn.addEventListener("click", canseltodo);
 changeEditbtn.addEventListener("click", changetodo);
- inputEdit.addEventListener("keydown", (e) => {
-   if (e.key === "Enter") {
-     e.preventDefault();
-     changetodo();
-     // جلوگیری از رفرش صفحه هنگام زدن Enter
-   }
- });
+inputEdit.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    changetodo();
+    // جلوگیری از رفرش صفحه هنگام زدن Enter
+  }
+});
