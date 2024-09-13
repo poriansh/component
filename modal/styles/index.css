@@ -75,6 +75,7 @@ html {
   border-radius: 1rem;
   font-weight: 700;
   transition: all 200ms ease-in;
+  cursor: pointer;
 }
 #open-modal:hover {
   background-color: blue;
@@ -87,8 +88,6 @@ html {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
- 
- 
 }
 
 .modal {
@@ -100,6 +99,7 @@ html {
   background-color: var(--color-secondary-0);
   border-radius: var(--border-radius-lg);
   padding: 2rem;
+  
 }
 
 .modal__header {
@@ -122,6 +122,11 @@ html {
   border-radius: 100%;
   position: absolute;
   left: 0;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.close-modal:hover{
+  background-color: var(--color-red-300);
 }
 form {
   display: grid;
@@ -153,6 +158,7 @@ form > button {
   border: none;
   padding: 1rem;
   border-radius: 1rem;
+  cursor: pointer;
 }
 .hidden {
   display: none;
