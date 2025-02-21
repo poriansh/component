@@ -94,7 +94,9 @@ html {
   position: fixed;
   inset: 2rem;
   max-width: 50rem;
-  max-height:max-content;
+  height: max-content;
+  max-height: 90vh;
+  overflow-y: auto;
   margin:auto;
   background-color: var(--color-secondary-0);
   border-radius: var(--border-radius-lg);
