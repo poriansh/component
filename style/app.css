@@ -1,0 +1,20 @@
+:root {
+}
+
+html {
+  font-size: 62.5%;
+  /* عوض کردن واحد rem */
+  /* 62.5% = 10px */
+}
+
+body {
+  line-height: 1.6;
+  font-family: "yekan-Regular";
+  font-size: 1.6rem;
+  /* اما کل بادی ما 16 px */
+  background-color: #ffffff;
+  color: #1d2939;
+  
+}
+
+

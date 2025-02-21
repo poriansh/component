@@ -1,0 +1,61 @@
+.card {
+  background-image: url("../imges/card.png");
+  background-repeat: no-repeat;
+  width: 50rem;
+  height: 30rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: absolute;
+  top: -4.8rem;
+  left: 2rem;
+  height: 4.8rem;
+  transition: all 150ms ease-in-out;
+}
+
+.card-icon__comment {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #1d2939;
+  gap: 6px;
+  border-radius: 5rem;
+  padding: 10.5px 16px 10.5px 16px;
+}
+
+.card-icon__like {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #c9184a;
+  padding: 1.2rem;
+  border-radius: 5rem;
+}
+
+.card-content {
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  padding: 2rem;
+  height: 10rem;
+  transition: all 150ms ease-in-out;
+}
+
+.card:hover .card-content {
+  bottom: 0rem;
+}
+
+.card:hover .card-icon {
+  top: 2rem;
+}

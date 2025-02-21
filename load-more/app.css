@@ -1,0 +1,125 @@
+
+.load-more {
+  margin-top: 10rem;
+}
+
+.load-more-header {
+  text-align: center;
+}
+
+.load-more-header__title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #1d2939;
+}
+
+.load-more-header__img {
+  margin-top: 0.5rem;
+}
+
+.load-more-content {
+  background-color: #f5f5f5;
+  padding: 2.4rem 2.4rem 3.8rem 2.4rem;
+  margin: 3.2rem auto;
+  border-radius: 16px;
+  position: relative;
+}
+
+.load-more-content-caption {
+  max-height: 288px;
+  overflow: hidden;
+  transition: all 150ms ease-in;
+  direction: ltr;
+  padding-right: 1rem;
+}
+
+.load-more-content-caption__text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1d2939;
+  text-align: end;
+}
+
+.load-more-content-shadow {
+  position: absolute;
+  bottom: 38px;
+  right: 0;
+  left: 0;
+  height: 158px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    #f5f5f5 0%,
+    rgba(245, 245, 245, 0.54) 71.07%,
+    rgba(245, 245, 245, 0) 100%
+  );
+}
+
+.load-more-content-btn {
+  width: 302px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #eb5e28;
+  border-radius: 0.8rem;
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border: none;
+  color: #fff;
+  transition: all 150ms ease-in;
+  cursor: pointer;
+  font-family: yekan-Regular;
+}
+.load-more-content-btn:active {
+  background-color: #eb5f288d;
+}
+
+.load-more-content-btn__text {
+  font-weight: 500;
+}
+.close {
+  display: none;
+}
+
+.load-more-content--open .load-more-content-shadow {
+  display: none;
+}
+
+.load-more-content--open .load-more-content-caption {
+  max-height: 100rem;
+  /* overflow: scroll; */
+}
+
+.load-more-content--open .load-more-content-btn {
+  background-color: #fff;
+  color: #eb5e28;
+  border: 1px solid #eb5e28;
+}
+
+.load-more-content--open .add {
+  display: none;
+}
+
+.load-more-content--open .close {
+  display: block;
+}
+
+.load-more-content-caption::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.load-more-content-caption::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.load-more-content-caption::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 50px;
+}
