@@ -1,0 +1,24 @@
+html {
+    font-size: 62.5%;
+    /* عوض کردن واحد rem */
+    /* 62.5% = 10px */
+    -webkit-tap-highlight-color: transparent; 
+    /* رفع کردن بگراند هنگام کلیک در موبایل */
+    /* اما ساپورت مرورگرش ضعیفه */
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+body {
+    line-height: 1.6;
+    font-size: 1.6rem;
+    /* اما کل بادی ما 16 px */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
