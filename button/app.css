@@ -1,24 +1,68 @@
 html {
-    font-size: 62.5%;
-    /* عوض کردن واحد rem */
-    /* 62.5% = 10px */
-    -webkit-tap-highlight-color: transparent; 
-    /* رفع کردن بگراند هنگام کلیک در موبایل */
-    /* اما ساپورت مرورگرش ضعیفه */
-    box-sizing: border-box;
+  font-size: 62.5%;
+  /* عوض کردن واحد rem */
+  /* 62.5% = 10px */
+  -webkit-tap-highlight-color: transparent;
+  /* رفع کردن بگراند هنگام کلیک در موبایل */
+  /* اما ساپورت مرورگرش ضعیفه */
+  box-sizing: border-box;
 }
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 body {
-    line-height: 1.6;
-    font-size: 1.6rem;
-    /* اما کل بادی ما 16 px */
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  /* اما کل بادی ما 16 px */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
 }
+.btn {
+  width: 14rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #1b1b1b;
+  color: #fff;
+  transition: all 150ms ease-in;
+  overflow: hidden;
+  position: relative;
+}
+/*  btn 1  */
+.btn-1 {
+  border: 1px solid #1b1b1b;
+}
+.btn-1:hover {
+  background-color: #fff;
+  color: #1b1b1b;
+  box-shadow: 4px 4px 0 #1b1b1b;
+}
+
+/* btn 2*/
+.btn-2:hover .btn2-overlay {
+    transform: translateX(0);
+}
+.btn2-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  color: #1b1b1b;
+  background-color: #fff;
+  border-top: 1px solid #1b1b1b;
+  transform: translateX(-14rem);
+  transition: all 150ms ease-in;
+}
+
+
+/* btn 3 */
+
