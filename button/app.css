@@ -47,7 +47,7 @@ body {
 
 /* btn 2*/
 .btn-2:hover .btn2-overlay {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 .btn2-overlay {
   position: absolute;
@@ -59,10 +59,164 @@ body {
   color: #1b1b1b;
   background-color: #fff;
   border-top: 1px solid #1b1b1b;
+  border-bottom: 1px solid #1b1b1b;
   transform: translateX(-14rem);
   transition: all 150ms ease-in;
 }
 
-
 /* btn 3 */
 
+.btn-3 {
+  background-color: #fff;
+  
+}
+.btn-3:hover::after,
+.btn-3:hover::before {
+  height: 5rem;
+} 
+.btn-3::after,
+.btn-3::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 0;
+  background-color: #1b1b1b;
+  transition: all 300ms ease-in ;
+}
+
+.btn-3::after{
+  right: 0;
+  bottom: 0;
+
+}
+.btn-3::before {
+  left: 0;
+  top: 0;
+}
+.btn3-overlay {
+  color: #1b1b1b;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.btn3-overlay:hover::after,
+.btn3-overlay:hover::before {
+  width: 14rem;
+} 
+.btn3-overlay::after,
+.btn3-overlay::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #1b1b1b;
+  transition: all 300ms ease-in 300ms;
+}
+
+.btn3-overlay::after{
+  right: 0;
+  bottom: 0;
+
+}
+.btn3-overlay::before {
+  left: 0;
+  top: 0;
+}
+
+/* btn-4 */
+.btn-4 {
+  background-color: #fff;
+  
+}
+.btn-4:hover::after,
+.btn-4:hover::before {
+  height: 2.5rem;
+} 
+.btn-4::after,
+.btn-4::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 0;
+  background-color: #1b1b1b;
+  transition: all 300ms ease-in ;
+}
+
+.btn-4::after{
+  right: 0;
+  bottom: 0;
+
+}
+.btn-4::before {
+  left: 0;
+  top: 0;
+}
+.btn4-overlay {
+  color: #1b1b1b;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.btn4-overlay:hover::after,
+.btn4-overlay:hover::before {
+  width: 2.5rem;
+} 
+.btn4-overlay::after,
+.btn4-overlay::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #1b1b1b;
+  transition: all 300ms ease-in;
+}
+
+.btn4-overlay::after{
+  right: 0;
+  bottom: 0;
+
+}
+.btn4-overlay::before {
+  left: 0;
+  top: 0;
+}
+
+/* btn-5 */
+
+.btn-5{
+  background-color: #fff;
+  color: #1b1b1b;
+  border: 1px solid #1b1b1b;
+  position: relative;
+
+}
+.btn-5::after{
+  content: "";
+  position: absolute;
+  left: -25px;
+  bottom: -25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #1b1b1b;
+   transition: all 500ms ease-in-out;
+   
+}
+.btn-5:hover::after{
+  transform: scale(20);
+}
+.btn-5:hover{
+  color: #fff;
+}
+.btn5-overlay{
+ 
+  z-index: 2;
+}
