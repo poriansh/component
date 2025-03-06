@@ -28,7 +28,7 @@
                         <li class="nav__item">
                             <a class="nav__link" href="">صفحه اصلی</a>
                         </li>
-                        <li class="nav__item">
+                        <li class="nav__item nav__item--side">
                             <a class="nav__link" href="">محصولات
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -111,9 +111,10 @@
                                 </div>
                                 <div class="submenu-img">
                                     <img src="../imges/p-img.jpg" alt="">
-    
+
                                 </div>
                             </div>
+
                         </li>
                         <li class="nav__item">
                             <a class="nav__link" href="">بلاگ</a>
@@ -135,8 +136,8 @@
                             <path
                                 d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
                                 stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path opacity="0.4" d="M22 22L20 20" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <path opacity="0.4" d="M22 22L20 20" stroke="#292D32" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
                     <div class="cart">
@@ -150,15 +151,18 @@
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <span class="cart-badge">2</span>
+                        <div class="cart__sub"></div>
                     </div>
                     <a class="header-left-link" href="">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                             <path opacity="0.4"
                                 d="M20.5901 22C20.5901 18.13 16.7402 15 12.0002 15C7.26015 15 3.41016 18.13 3.41016 22"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                         <span class="header-left-link__text">ورود | عضویت</span>
                     </a>
@@ -303,7 +307,32 @@
             </button>
         </div>
     </section>
-    <script src="../script/app.js"></script>
+    <div class="overlay"></div>
+    <div class="overlay-cart"></div>
+    <!-- <script src="../script/app.js"></script> -->
+    <script>
+        const menuItem = document.querySelector(".nav__item--side")
+        const overlay = document.querySelector(".overlay")
+        const overlaycart = document.querySelector(".overlay-cart")
+        const cartsub = document.querySelector(".cart__sub")
+        const cart = document.querySelector(".cart")
+        const header = document.querySelector(".header")
+        menuItem.addEventListener("mousemove", () => {
+            console.log("hover")
+            overlay.classList.add("overlay--show")
+        })
+        menuItem.addEventListener("mouseout", () => {
+            console.log("hover")
+            overlay.classList.remove("overlay--show")
+        })
+        cart.addEventListener("click", () => {
+            console.log("hover")
+            cartsub.classList.toggle("cart__sub--active")
+            overlaycart.classList.toggle("overlay-cart--active")
+            header.classList.toggle("header--show")
+        })
+        
+    </script>
 </body>
 
 </html>
