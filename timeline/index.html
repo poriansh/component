@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/Reset.css" />
+    <link rel="stylesheet" href="../style/font.css" />
+    <link rel="stylesheet" href="../style/app.css" />
+    <title>تایم‌لاین عمودی</title>
+    <style>
+        body {
+            font-family: "yekan-Regular";
+            background-color: #1E1E2F;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10rem;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            left: -64px;
+            background-color: #27293C;
+            top: 0;
+            bottom: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: #25293C;
+            color: #FFFFFF;
+            padding: 16px;
+            border-radius: 6px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #25293C;
+            transform: rotate(45deg);
+            top: 20px;
+            left: -9px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #FE28A2;
+            border-radius: 100%;
+            top: 0;
+            left: -94px;
+            z-index: 10;
+        }
+
+        .timeline-item__title {
+            background-color: #FE28A2;
+            padding: 6px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .timeline-item__desc {
+            margin-top: 24px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="timeline">
+        <div class="timeline-item">
+            <span class="timeline-item__title">مرحله اول</span>
+            <p class="timeline-item__desc">کد ادیتور آنلاین یک ابزار برای ویرایش کردن کد در وب بوده که به صورت آنلاین می­توان از آن استفاده کرد.
+                اکثر توسعه‌دهندگان
+                با استفاده از این ابزار بدون نیاز به دانلود و نصب نرم‌افزار خاصی.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-item__title">مرحله دوم</span>
+            <p class="timeline-item__desc">کد ادیتور آنلاین یک ابزار برای ویرایش کردن کد در وب بوده که به صورت آنلاین می­توان از آن استفاده کرد.
+                اکثر توسعه‌دهندگان
+                با استفاده از این ابزار بدون نیاز به دانلود و نصب نرم‌افزار خاصی.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="timeline-item__title">مرحله سوم</span>
+            <p class="timeline-item__desc">کد ادیتور آنلاین یک ابزار برای ویرایش کردن کد در وب بوده که به صورت آنلاین
+                می­توان از آن استفاده کرد. اکثر توسعه‌دهندگان
+                با استفاده از این ابزار بدون نیاز به دانلود و نصب نرم‌افزار خاصی.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
